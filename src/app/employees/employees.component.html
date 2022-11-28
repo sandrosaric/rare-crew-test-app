@@ -1,0 +1,20 @@
+<ng-container *ngIf="employeesResponse">
+  <div class="p-5 w-150">
+    <table class="table table-bordered">
+        <thead class="table-active">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Total Time in Month</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employeesForPresentation" [class.table-danger]="employee.hours < 100">
+              <td scope="row">{{employee.name}}</td>
+              <td>{{employee.hours}}</td>
+              <td><a href="#">Edit</a></td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+</ng-container>
